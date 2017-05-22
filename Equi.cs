@@ -39,9 +39,6 @@ namespace Test
             return res;
         }
      
-        static void Main(string [] args)
-        {
-            
-        }
+      
     }
 }
