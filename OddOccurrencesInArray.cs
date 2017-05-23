@@ -17,15 +17,16 @@ namespace Test
             // odd length
             int isOddLength = arrLength % 2;
             // N length
-
             int isNLength = arrLength;
             // each can be paired
-
+             
+            // if length of array is even - there is no unpaired element  
             if(isOddLength != 1)
             {
                 return 0;
             }
 
+            // collect array values and how often it appears 
             var dict = new Dictionary<int, int>();
             foreach(int d in A)
             {
@@ -34,6 +35,8 @@ namespace Test
                 else
                     dict.Add(d, 1);
             }
+
+            // if current element met even times in array - this is the result
             int res = dict.FirstOrDefault(x => x.Value % 2 == 1).Key;
 
             return res;

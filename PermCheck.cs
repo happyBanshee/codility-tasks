@@ -18,11 +18,14 @@ namespace Test
 
             for(int i = 0; i < arrLength; i++)
             {
+                // take arr length. This means array should have elements value from 1-arrLength 
+                // start from max value
                 count = arrLength - i;
                 // TODO: indexOf slow down the check!!!
                 int index = Array.IndexOf(A, count);
                 var isPresent = index != -1;
 
+                // if this num is present - save it
                 if(isPresent)
                 {
                     step++;
@@ -33,9 +36,11 @@ namespace Test
                     }
                 } else
                 {
+                    // escape immidiately if any element is missed 
                     return 0;
                 }
             }
+
             isPermut = arrLength > 0 && (arrLength == step) ? 1 : 0;
 
             return isPermut;
